@@ -36,6 +36,9 @@
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.49",
     "@aws-amplify/backend": "^1.6.0",
-    "@aws-amplify/backend-cli": "^1.4.0"
+    "@aws-amplify/backend-cli": "^1.4.0",
+    "aws-cdk": "^2.161.1",
+    "aws-cdk-lib": "^2.161.1",
+    "constructs": "^10.3.0"
   }
 }
