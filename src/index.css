@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import '@aws-amplify/ui-react/styles.css';
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white min-h-screen;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer components {
+  /* Simple Amplify Authenticator Styling */
+  [data-amplify-authenticator] {
+    --amplify-colors-background-primary: #1e293b;
+    --amplify-colors-background-secondary: #334155;
+    --amplify-colors-font-primary: #f8fafc;
+    --amplify-colors-font-secondary: #cbd5e1;
+    --amplify-colors-border-primary: #475569;
+    --amplify-colors-brand-primary-80: #3b82f6;
+    --amplify-colors-brand-primary-90: #60a5fa;
+    --amplify-colors-brand-primary-100: #93c5fd;
+  }
+
+  /* Center the authenticator properly */
+  [data-amplify-authenticator] {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  [data-amplify-authenticator] [data-amplify-container] {
+    max-width: 400px;
+    width: 100%;
+  }
+
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-transparent;
+  }
+  
+  .btn-primary {
+    @apply btn bg-blue-600 hover:bg-blue-700 text-white focus:ring-blue-500;
+  }
+  
+  .btn-secondary {
+    @apply btn bg-slate-600 hover:bg-slate-700 text-white focus:ring-slate-500;
+  }
+  
+  .btn-success {
+    @apply btn bg-green-600 hover:bg-green-700 text-white focus:ring-green-500;
+  }
+  
+  .btn-danger {
+    @apply btn bg-red-600 hover:bg-red-700 text-white focus:ring-red-500;
+  }
+  
+  .card {
+    @apply bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 shadow-xl;
+  }
+  
+  .input {
+    @apply w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent;
+  }
+  
+  .buzzer {
+    @apply w-32 h-32 rounded-full bg-gradient-to-br from-red-500 to-red-700 shadow-2xl transform transition-all duration-150 active:scale-95 hover:shadow-red-500/50 cursor-pointer flex items-center justify-center text-white font-bold text-xl;
+  }
+  
+  .buzzer:hover {
+    @apply shadow-2xl shadow-red-500/30;
+  }
+  
+  .buzzer:active {
+    @apply shadow-inner;
+  }
+}
