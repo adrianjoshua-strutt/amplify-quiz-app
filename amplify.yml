@@ -3,8 +3,10 @@ backend:
   phases:
     build:
       commands:
+        - yum install -y python3 make gcc-c++ || apt-get update && apt-get install -y python3 make g++ || echo "Build tools install failed"
         - cd amplify && npm install --include=optional
-        - cd amplify && npm rebuild @parcel/watcher --build-from-source || echo "Parcel watcher rebuild failed, continuing..."
+        - cd amplify && npm install @parcel/watcher-linux-x64-glibc --force || echo "Direct parcel install failed"
+        - cd amplify && npm rebuild @parcel/watcher --build-from-source || echo "Parcel rebuild failed"
         - npx ampx pipeline-deploy --branch $AWS_BRANCH --app-id $AWS_APP_ID
 frontend:
   phases:
